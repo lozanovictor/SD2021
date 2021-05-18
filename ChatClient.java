@@ -13,7 +13,7 @@ public class ChatClient {
         try {
             mRef = new MessageInterfaceImpl();
             sc = new Scanner(System.in);
-            Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.getRegistry(8080);
             obj = (ChatInterface)registry.lookup("ChatServer");
             
             chatIdentifier = obj.joinGroup(args[0], mRef);
