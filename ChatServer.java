@@ -6,7 +6,7 @@ public class ChatServer{
     public static void main(String[] args){
         try{
             ChatInterfaceImpl obj = new ChatInterfaceImpl();
-            Registry registry = LocateRegistry.getRegistry("localhost");
+            Registry registry = LocateRegistry.createRegistry(8080);
             registry.rebind("ChatServer", obj);
             System.out.println("ChatServer bound in registry");
         }
